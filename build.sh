@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Copyright (C) 2020 Edwiin Kusuma Jaya (MWG_Ryzen)
+# Copyright (C) 2021 LeaF
 #
 # Simple Local Kernel Build Script
 #
@@ -28,14 +28,14 @@ done
 CONFIG=vendor/ginkgo-perf_defconfig
 KERNEL_DIR=$(pwd)
 PARENT_DIR="$(dirname "$KERNEL_DIR")"
-KERN_IMG="/home/ryuzenn/out-meme/arch/arm64/boot/Image.gz-dtb"
-DTBO_IMG="/home/ryuzenn/out-meme/arch/arm64/boot/dtbo.img"
-export KBUILD_BUILD_USER="EdwiinKJ"
-export KBUILD_BUILD_HOST="RastaMod69"
-export PATH="/home/ryuzenn/toolchain/rastamod-clang/bin:$PATH"
-export LD_LIBRARY_PATH="/home/ryuzenn/toolchain/rastamod-clang/lib:$LD_LIBRARY_PATH"
-export KBUILD_COMPILER_STRING="$(/home/ryuzenn/toolchain/rastamod-clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
-export out=/home/ryuzenn/out-meme
+KERN_IMG="/home/leaf/out-meme/arch/arm64/boot/Image.gz-dtb"
+DTBO_IMG="/home/leaf/out-meme/arch/arm64/boot/dtbo.img"
+export KBUILD_BUILD_USER="LeaF"
+export KBUILD_BUILD_HOST="DroneCI"
+export PATH="/home/leaf/toolchain/GroundZer0-clang/bin:$PATH"
+export LD_LIBRARY_PATH="/home/leaf/toolchain/GroundZer0-clang/lib:$LD_LIBRARY_PATH"
+export KBUILD_COMPILER_STRING="$(/home/leaf/toolchain/GroundZer0-clang/bin/clang --version | head -n 1 | perl -pe 's/\((?:http|git).*?\)//gs' | sed -e 's/  */ /g' -e 's/[[:space:]]*$//' -e 's/^.*clang/clang/')"
+export out=/home/leaf/out-meme
 
 # Functions
 clang_build () {
@@ -68,7 +68,7 @@ fi
 
 # clone AnyKernel3
 if ! [ -d "AnyKernel3" ]; then
-    git clone https://github.com/kutemeikito/AnyKernel3
+    git clone https://github.com/LeaFxZer0/AnyKernel3
 else
     echo "${bold}Direktori AnyKernel3 Sudah Ada, Tidak Perlu di Clone${normal}"
 fi
